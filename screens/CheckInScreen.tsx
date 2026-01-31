@@ -4,7 +4,7 @@ import { User as UserIcon, BookUser, Phone, UserCheck, GraduationCap, Smartphone
 import { dbService } from '../services/db';
 import { User as AppUser, VisitorType } from '../types';
 import { Camera } from '../components/Camera';
-import QRCode from 'qrcode';
+import * as QRCode from 'qrcode';
 
 interface CheckInScreenProps {
   user: AppUser;
