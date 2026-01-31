@@ -1,0 +1,7 @@
+{
+  "name": "Copy of BOSCOGATE-PASS",
+  "description": "Offline-first school visitor management system with secure entry, tracking, and sync capabilities.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
