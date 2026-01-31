@@ -10,10 +10,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       :root {
-        --ios-bg: #1C1C1E; /* iOS Dark Mode Background */
-        --ios-secondary-bg: #2C2C2E; /* iOS Dark Mode Secondary Background (for cards/lists) */
-        --ios-tertiary-bg: #3A3A3C; /* iOS Dark Mode Tertiary Background */
-        --ios-blue: #0A84FF; /* iOS Blue Accent */
+        --ios-bg: #1C1C1E;
+        --ios-secondary-bg: #2C2C2E;
+        --ios-tertiary-bg: #3A3A3C;
+        --ios-blue: #0A84FF;
         --ios-label: #FFFFFF;
         --ios-secondary-label: rgba(235, 235, 245, 0.6);
         --ios-separator: rgba(84, 84, 88, 0.65);
@@ -61,16 +61,10 @@
         -webkit-tap-highlight-color: transparent;
         overscroll-behavior: none;
         letter-spacing: normal;
-        /* Prevent scrollbar jitter */
         overflow-x: hidden;
         background-color: #000;
       }
-      
-      /* 
-         Background Pseudo-element 
-         Applies a dark abstract background with subtle elements.
-         Filters adjusted for optimal text contrast.
-      */
+
       body::before {
         content: "";
         position: fixed;
@@ -86,15 +80,9 @@
         filter: grayscale(80%) brightness(0.5) blur(0px);
         transform: scale(1.02);
       }
-      
-      /* Globally hide scrollbars for Kiosk/App feel */
-      ::-webkit-scrollbar {
-        display: none;
-      }
-      * {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
+
+      ::-webkit-scrollbar { display: none; }
+      * { -ms-overflow-style: none; scrollbar-width: none; }
 
       #root {
         padding-top: env(safe-area-inset-top);
@@ -102,17 +90,12 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center main content globally */
+        align-items: center;
       }
 
-      .ios-press {
-        transition: filter 0.2s;
-      }
-      .ios-press:active {
-        filter: brightness(0.75);
-      }
-      
-      /* Glass Panel Utility */
+      .ios-press { transition: filter 0.2s; }
+      .ios-press:active { filter: brightness(0.75); }
+
       .glass-panel {
         background-color: rgba(28, 28, 30, 0.65);
         backdrop-filter: blur(20px);
@@ -128,39 +111,34 @@
         from { transform: translateX(0); opacity: 1; }
         to { transform: translateX(-100%); opacity: 0.5; }
       }
-      .animate-ios-push {
-        animation: slideInFromRight 0.35s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-      }
+      .animate-ios-push { animation: slideInFromRight 0.35s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
 
-      @keyframes slideInFromBottom {
-        from { transform: translateY(100%); }
-        to { transform: translateY(0); }
-      }
-      .animate-ios-modal {
-        animation: slideInFromBottom 0.4s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-      }
+      @keyframes slideInFromBottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+      .animate-ios-modal { animation: slideInFromBottom 0.4s cubic-bezier(0.32, 0.72, 0, 1) forwards; }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "idb": "https://esm.sh/idb@^8.0.3",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "react-dom": "https://esm.sh/react-dom@^19.2.4",
-    "papaparse": "https://esm.sh/papaparse@^5.5.3",
-    "jszip": "https://esm.sh/jszip@^3.10.1",
-    "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
-    "qrcode": "https://esm.sh/qrcode@^1.5.4",
-    "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "vite-plugin-pwa": "https://esm.sh/vite-plugin-pwa@^1.2.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "idb": "https://esm.sh/idb@^8.0.3",
+        "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+        "react-dom": "https://esm.sh/react-dom@^19.2.4",
+        "papaparse": "https://esm.sh/papaparse@^5.5.3",
+        "jszip": "https://esm.sh/jszip@^3.10.1",
+        "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
+        "qrcode": "https://esm.sh/qrcode@^1.5.4",
+        "vite": "https://esm.sh/vite@^7.3.1",
+        "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+        "vite-plugin-pwa": "https://esm.sh/vite-plugin-pwa@^1.2.0"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/index.css">
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
