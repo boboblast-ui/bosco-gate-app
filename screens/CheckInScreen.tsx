@@ -4,7 +4,7 @@ import { User as UserIcon, BookUser, Phone, UserCheck, GraduationCap, Smartphone
 import { dbService } from '../services/db';
 import { User as AppUser, VisitorType } from '../types';
 import { Camera } from '../components/Camera';
-import { toDataURL } from 'qrcode';
+import QRCode from 'qrcode';
 
 interface CheckInScreenProps {
   user: AppUser;
@@ -127,7 +127,7 @@ export const CheckInScreen: React.FC<CheckInScreenProps> = ({ user, onSuccess })
       const secureUrl = `https://boscogate-pass.web.app/auth/verify?session_token=${session.sessionId}`;
 
       try {
-          const url = await toDataURL(secureUrl, { 
+          const url = await QRCode.toDataURL(secureUrl, { 
               color: { dark: '#000000', light: '#ffffff' },
               width: 240,
               margin: 2,
